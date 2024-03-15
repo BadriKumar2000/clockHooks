@@ -1,0 +1,8 @@
+.main-container {
+  height: 100vh;
+}
+.clock-container {
+  height: 25vh;
+  width: 25vh;
+  border-radius: 3vh;
+}

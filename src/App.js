@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import ClockHooks from "./components/clockHooks";
 
-function App() {
+import "./App.css";
+import { useState } from "react";
+
+const App = () => {
+  const [clock, setCLock] = useState(false);
+  const toggleCLock = () => {
+    setCLock(!clock);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex justify-content-center flex-column align-items-center bg-dark main-container">
+      <button className="btn btn-primary" onClick={toggleCLock}>
+        {clock ? "Hide" : "Show"}
+      </button>
+      {clock ? <ClockHooks /> : null}
     </div>
   );
-}
+};
 
 export default App;
